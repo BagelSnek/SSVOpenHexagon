@@ -1,6 +1,7 @@
 -- common variables
 THICKNESS = 40.0;
 
+-- enableSwapIfDMGreaterThan: enables swap if difficulty multiplier > given value
 function enableSwapIfDMGreaterThan(mDM)
 	if(u_getDifficultyMult() > mDM) then
 		m_messageAdd(" difficulty > " ..mDM.. "\nswap enabled!", 65)
@@ -8,6 +9,7 @@ function enableSwapIfDMGreaterThan(mDM)
 	end	
 end
 
+-- disableIncIfDMGreaterThan: disables increment if difficulty multiplier > given value
 function disableIncIfDMGreaterThan(mDM)
 	if(u_getDifficultyMult() > mDM) then
 		m_messageAdd(" difficulty > " ..mDM.. "\nincrement disabled!", 65)
