@@ -1,0 +1,12 @@
+{
+	"id": "dimension break",
+	"name": "dimension break",
+	"description": "ascend the infinite",
+	"author": "sir memesalot",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "dimension break",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/dimension break.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

@@ -1,0 +1,12 @@
+{
+	"id": "forest",
+	"name": "forest",
+	"description": "",
+	"author": "",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "forest",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/forest.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

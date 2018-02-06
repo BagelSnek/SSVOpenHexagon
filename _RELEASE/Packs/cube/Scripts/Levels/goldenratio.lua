@@ -31,7 +31,6 @@ function onInit()
 	l_setSidesMin(5)
 	l_setSidesMax(7)
 	l_setIncTime(10)
-	l_setMaxInc(6)
 
 	l_setPulseMin(60)
 	l_setPulseMax(87)

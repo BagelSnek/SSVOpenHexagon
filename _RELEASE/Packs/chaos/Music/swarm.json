@@ -1,0 +1,20 @@
+{
+	// Music data id
+	"id": "swarm",
+
+	// Music file
+	"file_name": "swarm.ogg",
+
+	// Music information
+	"name": "Swarm",
+	"album": " ",
+	"author": "KURRO",
+	
+	// Segments
+	"segments":
+	[
+		{ "time": 33 },
+		{ "time": 70 },
+		{ "time": 110 }
+	]
+}

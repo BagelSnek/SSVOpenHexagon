@@ -23,15 +23,15 @@ function pAltMirrorSpiral(mTimes, mExtra)
 	t_wait(getPerfectDelay(THICKNESS) * 6.5)
 end
 
-function randomArray(mNumber,mLower,mUpper)
+function randomArray(mNumber, mLower, mUpper)
 	a = {}
 	for k = 1, mNumber do
-		a[k] = math.random(mLower,mUpper)
+		a[k] = math.random(mLower, mUpper)
 	end
 	return a
 end
 
-function pAltTunnel(mTimes,mFree)
+function pAltTunnel(mTimes, mFree)
 	oldThickness = THICKNESS
 	myThickness = getPerfectThickness(THICKNESS)
 	delay = getPerfectDelay(myThickness) * 5
@@ -45,7 +45,7 @@ function pAltTunnel(mTimes,mFree)
 			w_wall(startSide, myThickness + 5 * l_getSpeedMult() * delay)
 		end
 		
-		cBarrageN(startSide + loopDir,mFree)
+		cBarrageN(startSide + loopDir, mFree)
 		t_wait(delay)
 		
 		loopDir = loopDir * -1
@@ -63,14 +63,14 @@ function cycle(mSides)
 	return eArray
 end
 
-function pLadder(mTimes,mArray,myThickness)
+function pLadder(mTimes, mArray, myThickness)
 
 	delay = getPerfectDelay(myThickness)
 
 	local eArray = {}
 	l = 1
 	s = (#mArray)/l_getSides()
-	t = math.random(0,100)
+	t = math.random(0, 100)
 
 	for i = 1, mTimes do
 		q = (i+t) % s + 1
@@ -97,12 +97,12 @@ function pLadder(mTimes,mArray,myThickness)
 		end
 	end
 
-	patternizer(eArray,myThickness)
+	patternizer(eArray, myThickness)
 	t_wait(delay*2)
 	
 end
 
-function patternizer(mArray,myThickness)
+function patternizer(mArray, myThickness)
 	delay = getPerfectDelay(myThickness)
 	eArray = cycle(l_getSides())
 

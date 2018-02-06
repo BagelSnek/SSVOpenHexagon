@@ -1,1 +1,0 @@
-SSVOpenHexagon.exe nocosmeticscript

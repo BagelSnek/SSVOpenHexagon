@@ -1,1 +1,0 @@
-SSVOpenHexagon.exe windowed no3D

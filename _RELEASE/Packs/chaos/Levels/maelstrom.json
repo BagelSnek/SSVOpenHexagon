@@ -1,0 +1,12 @@
+{
+	"id": "maelstrom",
+	"name": "maelstrom",
+	"description": "enter the vortex",
+	"author": "sir memesalot",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "maelstrom",
+	"musicId": "swarm",
+	"luaFile": "Scripts/Levels/maelstrom.lua",
+	"difficultyMults": [0.6, 0.85, 1.25, 1.4]
+}

@@ -1,0 +1,12 @@
+{
+	"id": "hyperdrive",
+	"name": "hyperdrive",
+	"description": "punch it, chewie!",
+	"author": "sir memesalot",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "hyperdrive",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/hyperdrive.lua",
+	"difficultyMults": [0.3, 0.6, 0.85, 1.25, 1.4]
+}

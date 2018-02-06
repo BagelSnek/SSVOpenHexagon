@@ -1,0 +1,12 @@
+{
+	"id": "shuttershock",
+	"name": "shuttershock",
+	"description": "smile for the camera",
+	"author": "sir memesalot",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "shuttershock",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/shuttershock.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}
