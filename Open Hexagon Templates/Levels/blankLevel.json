@@ -1,0 +1,12 @@
+{
+	"id": "",
+	"name": "",
+	"description": "",
+	"author": "",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}
