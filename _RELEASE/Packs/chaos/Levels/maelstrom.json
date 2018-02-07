@@ -3,7 +3,7 @@
 	"name": "maelstrom",
 	"description": "enter the vortex",
 	"author": "sir memesalot",	
-	"menuPriority": 0,
+	"menuPriority": 1,
 	"selectable": true,
 	"styleId": "maelstrom",
 	"musicId": "swarm",

@@ -3,7 +3,7 @@
 	"name": "hyperdrive",
 	"description": "punch it, chewie!",
 	"author": "sir memesalot",	
-	"menuPriority": 0,
+	"menuPriority": 3,
 	"selectable": true,
 	"styleId": "hyperdrive",
 	"musicId": "steampunkWarlord",
