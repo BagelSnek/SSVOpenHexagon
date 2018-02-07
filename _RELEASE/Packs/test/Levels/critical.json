@@ -1,0 +1,12 @@
+{
+	"id": "critical",
+	"name": "critical",
+	"description": "as the dice get larger, the stakes get higher",
+	"author": "sir memesalot",	
+	"menuPriority": 4,
+	"selectable": true,
+	"styleId": "critical",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/critical.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

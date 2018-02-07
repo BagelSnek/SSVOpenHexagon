@@ -7,6 +7,7 @@ u_execScript("evolutionpatterns.lua")
 
 flip = 1
 
+--rollingShutter: 
 function rollingShutter(mSide, mCurve, mCurveAcc, mCurveMin, mCurveMax, mCurvePingPong, length)
 	for i = 0, length - 1 do
 		wallHMCurveAcc(mSide, mCurve * i / 5, mCurveAcc, mCurveMin, mCurveMax, mCurvePingPong)

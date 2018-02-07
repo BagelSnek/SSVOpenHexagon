@@ -6,6 +6,7 @@ u_execScript("alternativepatterns.lua")
 function wallSAdj(mSide, mAdj) w_wallAdj(mSide, THICKNESS, mAdj) end
 function wallSAcc(mSide, mAdj, mAcc, mMinSpd, mMaxSpd) w_wallAcc(mSide, THICKNESS, mAdj, mAcc * (u_getDifficultyMult()), mMinSpd, mMaxSpd) end
 
+--pTrapBarrage: creates a ring of walls with a given side faster than the rest
 function pTrapBarrage(mSide)
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
 		
@@ -16,6 +17,7 @@ function pTrapBarrage(mSide)
 	t_wait(delay * 2.5)
 end
 
+--pTrapBarrageDouble: creates a ring of walls with a given side and its opposite faster than the rest
 function pTrapBarrageDouble(mSide)
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
 	side2 = mSide + getHalfSides();
@@ -32,6 +34,7 @@ function pTrapBarrageDouble(mSide)
 	t_wait(delay * 2.5)
 end
 
+--pTrapBarrageInverse: creates a ring of walls with a given side slower than the rest
 function pTrapBarrageInverse(mSide)
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
 	
@@ -46,6 +49,7 @@ function pTrapBarrageInverse(mSide)
 	t_wait(delay * 2.5)
 end
 
+--pTrapBarrageAlt: creates a ring where every second wall is faster
 function pTrapBarrageAlt(mSide)
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
 
@@ -64,6 +68,7 @@ function pTrapBarrageAlt(mSide)
 	t_wait(delay * 2.5)
 end
 
+--pTrapSpiral: creates a spiral of half of the shape continually being rotated, starting on a given side
 function pTrapSpiral(mSide)
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
 	loopDir = getRandomDir()		
@@ -79,6 +84,7 @@ function pTrapSpiral(mSide)
 	t_wait(delay * 2.5)
 end
 
+--pRCBarrage: creates rings with a random side open
 function pRCBarrage()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
@@ -90,6 +96,7 @@ function pRCBarrage()
 	t_wait(delay * 2.5)
 end
 
+--pRCBarrageDouble: can't tell difference between pRCBarrage and pRCBarrageDouble
 function pRCBarrageDouble()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
@@ -102,6 +109,7 @@ function pRCBarrageDouble()
 	t_wait(delay * 2.5)
 end
 
+--pRCBarrageSpin: creates 3 rings with a side missing from each, all next to each other
 function pRCBarrageSpin()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
@@ -117,6 +125,7 @@ function pRCBarrageSpin()
 	t_wait(delay * 2.5)
 end
 
+--pACBarrage: acceleradiant barrage thing
 function pACBarrage()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
@@ -128,6 +137,7 @@ function pACBarrage()
 	t_wait(delay * 2.5)
 end
 
+--pACBarrageMulti: acceleradiant tunnel thing
 function pACBarrageMulti()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 3.7
@@ -142,6 +152,7 @@ function pACBarrageMulti()
 	t_wait(delay * 8)
 end
 
+--pACBarrageMultiAltDir: acceleradiant spiral thing
 function pACBarrageMultiAltDir()
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 4
