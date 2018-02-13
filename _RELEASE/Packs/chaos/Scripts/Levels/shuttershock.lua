@@ -58,7 +58,7 @@ function onStep()
 	index = index + 1
 
 	if index - 1 == #keys then
-		index = 0
+		index = 1
 		keys = shuffle(keys)
 	end
 end
