@@ -4,7 +4,6 @@ u_execScript("common.lua")
 u_execScript("commonpatterns.lua")
 u_execScript("nextpatterns.lua")
 u_execScript("evolutionpatterns.lua")
-u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
@@ -30,7 +29,7 @@ index = 0
 -- onInit is an hardcoded function that is called when the level is first loaded
 function onInit()
 	l_setSpeedMult(4)
-	l_setSpeedInc(0.2)
+	l_setSpeedInc(0.1)
 	l_setRotationSpeed(0.25)
 	l_setRotationSpeedMax(0.5)
 	l_setRotationSpeedInc(0.05)
@@ -65,7 +64,7 @@ function onStep()
 	index = index + 1
 
 	if index - 1 == #keys then
-		index = 0
+		index = 1
 		keys = shuffle(keys)
 	end
 end

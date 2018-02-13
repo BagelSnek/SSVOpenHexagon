@@ -24,5 +24,30 @@ function clamp(input, min_val, max_val)
 	elseif input > max_val then
 		input = max_val
 	end
+
 	return input
+end
+
+-- valInArray: determines if val is in a given array
+function valInArray(val, array)
+	inArray = false
+    for i = 1, #val do
+        if array[i] == val then
+            inTab = true
+        end
+    end
+
+    return inArray
+end
+
+-- randNRArray: returns an array of a given length with all numbers between minVal and maxVal with no repeating numbers
+function randNRArray(length, minVal, maxVal)
+	sides = {n = length}
+	for i = 1, length do
+		repeat
+			arrayIn = math.random(minVal, maxVal)
+		until valInArray(arrayIn, sides)
+	end
+
+	return sides
 end

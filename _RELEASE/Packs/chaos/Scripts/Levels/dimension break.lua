@@ -78,7 +78,7 @@ function onStep()
 	index = index + 1
 	
 	if index - 1 == #keys then
-		index = 0
+		index = 1
 	end
 end
 
@@ -104,6 +104,14 @@ end
 function onUnload()
 end
 
+-- continuous direction change (even if not on level increment)
+dirChangeTime = 500
+
 -- onUpdate is an hardcoded function that is called every frame
 function onUpdate(mFrameTime)
+	dirChangeTime = dirChangeTime - mFrameTime;
+	if dirChangeTime < 0 then
+		l_setRotationSpeed(l_getRotationSpeed() * -1.0)
+		dirChangeTime = 500
+	end 
 end

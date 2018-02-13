@@ -14,7 +14,7 @@
 	"pulse_increment": 0.025,
 
 	// 3D options
-	"3D_depth": 50,
+	"3D_depth": 25,
 	"3D_skew": 0.25,
 	"3D_spacing": 2.5,
 	"3D_darken_multiplier": 2.0,
@@ -22,7 +22,7 @@
 	"3D_alpha_falloff": 0.1,
 
 	// Main color
-	"main": { "main": true, "dynamic": true, "value": [255, 0, 0, 255], "pulse": [-80, 75, 65, 0] },
+	"main": { "main": true, "dynamic": true, "value": [0, 0, 0, 255], "pulse": [-80, 75, 65, 0] },
 
 	// Background colors
 	"colors":
