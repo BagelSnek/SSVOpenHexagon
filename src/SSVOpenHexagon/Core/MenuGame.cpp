@@ -687,6 +687,14 @@ namespace hg
             {
                 return styleData.hueIncrement;
             });
+        mLua.writeVariable("s_setDynamic", [this](bool mValue)
+            {
+                styleData.mainColorData.dynamic = mValue;
+            });
+        mLua.writeVariable("s_set3dDepth",  [this](int mValue)
+            {
+                styleData._3dDepth = mValue;
+            });
 
         // Unused functions
         for(const auto& un :

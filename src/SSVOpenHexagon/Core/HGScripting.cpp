@@ -349,6 +349,14 @@ namespace hg
             {
                 styleData = assets.getStyleData(mId);
             });
+        lua.writeVariable("s_setDynamic", [=](bool mValue)
+            {
+                styleData.mainColorData.dynamic = mValue;
+            });
+        lua.writeVariable("s_set3dDepth",  [=](int mValue)
+            {
+                styleData._3dDepth = mValue;
+            });
 
         // Wall creation
         lua.writeVariable("w_wall", [=](int mSide, float mThickness)

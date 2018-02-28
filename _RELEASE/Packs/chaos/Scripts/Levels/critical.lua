@@ -8,14 +8,15 @@ u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then fracWallRing(math.random(2, 3))
-		elseif mKey == 1 then fracAccWallRing(math.random(2, 3), (index / 2.0) * cFlip, 0, 0, 0, false)
+		if mKey == 0 then fracWallRing(math.random(3, 6) / 2.0)
+		elseif mKey == 1 then fracAccWallRing(math.random(3, 6) / 2.0, (index / 2.0) * cFlip, 0.0, 0.0, 0.0, false)
+		elseif mKey == 2 then fracAccWallRing(math.random(3, 6) / 2.0, (index / 2.0) * cFlip, math.random(5, 10) / 100.0 * cFlip, math.random(5, 35) / -10.0, math.random(5, 35) / 10.0, true)
 	end
 end
 
 -- shuffle the keys, and then call them to add all the patterns
 -- shuffling is better than randomizing - it guarantees all the patterns will be called
-keys = { 0, 0, 1, 1 }
+keys = { 0, 0, 1, 1, 2 }
 keys = shuffle(keys)
 index = 0
 cFlip = 1
@@ -71,21 +72,27 @@ function onIncrement()
 	if l_getSides() == 4 then 
 		m_messageAdd("d6", 150)
 		l_setSides(6)
+		s_set3dDepth(5)
 	elseif l_getSides() == 6 then 
 		m_messageAdd("d8", 150)
 		l_setSides(8)
+		s_set3dDepth(7)
 	elseif l_getSides() == 8 then 
 		m_messageAdd("d10", 150)
 		l_setSides(10)
+		s_set3dDepth(9)
 	elseif l_getSides() == 10 then 
 		m_messageAdd("d12", 150)
 		l_setSides(12)
+		s_set3dDepth(11)
 	elseif l_getSides() == 12 then 
 		m_messageAdd("d20", 150)
 		l_setSides(20)
+		s_set3dDepth(19)
 	elseif l_getSides() == 20 then 
 		m_messageAdd("d100", 150)
 		l_setSides(100)
+		s_set3dDepth(99)
 	end
 end
 
