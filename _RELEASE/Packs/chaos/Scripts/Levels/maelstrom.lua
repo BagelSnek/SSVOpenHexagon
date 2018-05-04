@@ -66,7 +66,7 @@ end
 -- onStep is an hardcoded function that is called when the level timeline is empty
 -- onStep should contain your pattern spawning logic
 function onStep()
-	l_setSides(bRandom(5, upperBound))
+	l_setSides(math.random(5, upperBound))
 	addPattern(keys[index])
 	index = index + 1
 	

@@ -8,15 +8,16 @@ u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then fracWallRing(bRandom(3, 6) / 2.0)
-		elseif mKey == 1 then fracAccWallRing(bRandom(3, 6) / 2.0, (bRandom(1, 3) / 2.0) * cFlip * ((1 / dieDiff) / 4), 0, 0, 0, false)
-		elseif mKey == 2 then fracAccWallRing(bRandom(3, 6) / 2.0, (bRandom(1, 3) / 2.0) * cFlip * ((1 / dieDiff) / 4),
-			bRandom(5, 10) / 100.0 * cFlip * ((1 / dieDiff) / 4), 
-			bRandom(5, 35) / -10.0 * ((1 / dieDiff) / 4), 
-			bRandom(5, 35) / 10.0 * ((1 / dieDiff) / 4), true)
+		if mKey == 0 then fracWallRing(math.random(2, 3))
+		elseif mKey == 1 then fracAccWallRing(math.random(2, 3), (index / 2.0) * cFlip, 0, 0, 0, false)
 	end
 end
 
+-- shuffle the keys, and then call them to add all the patterns
+-- shuffling is better than randomizing - it guarantees all the patterns will be called
+keys = { 0, 0, 1, 1 }
+keys = shuffle(keys)
+index = 0
 cFlip = 1
 hueModifier = 0
 
@@ -44,46 +45,48 @@ function onInit()
 	l_setBeatPulseMax(20)
 	l_setBeatPulseDelayMax(20)
 
-	l_addTracked("dieSides", "die")
-	l_addTracked("special", "rolled")
-
 	l_enableRndSideChanges(false)
 end
 
 -- onLoad is an hardcoded function that is called when the level is started/restarted
 function onLoad()
-	dieSides = "d"..l_getSides()
-	special = bRandom(1, l_getSides())
-	dieDiff = special / (l_getSides() * 1.0)
-	m_messageAddImportant("You rolled a "..special.." on a "..dieSides, 100)
+	m_messageAdd("d4", 150)
 end
 
 -- onStep is an hardcoded function that is called when the level timeline is empty
 -- onStep should contain your pattern spawning logic
 function onStep()
+	addPattern(keys[index])
+	index = index + 1
 	cFlip = -cFlip
 
-	if dieDiff <= .25 then addPattern(2)
-	elseif dieDiff <= .5 then addPattern(bRandom(1,2))
-	elseif dieDiff <= .75 then addPattern(bRandom(0,1))
-	else addPattern(0)
+	if index - 1 == #keys then
+		index = 1
+		keys = shuffle(keys)
 	end
 end
 
 -- onIncrement is an hardcoded function that is called when the level difficulty is incremented
 function onIncrement()
-	if l_getSides() == 4 then l_setSides(6)
-	elseif l_getSides() == 6 then l_setSides(8)
-	elseif l_getSides() == 8 then l_setSides(10)
-	elseif l_getSides() == 10 then l_setSides(12)
-	elseif l_getSides() == 12 then l_setSides(20)
-	elseif l_getSides() == 20 then l_setSides(100)
+	if l_getSides() == 4 then 
+		m_messageAdd("d6", 150)
+		l_setSides(6)
+	elseif l_getSides() == 6 then 
+		m_messageAdd("d8", 150)
+		l_setSides(8)
+	elseif l_getSides() == 8 then 
+		m_messageAdd("d10", 150)
+		l_setSides(10)
+	elseif l_getSides() == 10 then 
+		m_messageAdd("d12", 150)
+		l_setSides(12)
+	elseif l_getSides() == 12 then 
+		m_messageAdd("d20", 150)
+		l_setSides(20)
+	elseif l_getSides() == 20 then 
+		m_messageAdd("d100", 150)
+		l_setSides(100)
 	end
-
-	dieSides = "d"..l_getSides()
-	special = bRandom(1, l_getSides())
-	dieDiff = special / (l_getSides() * 1.0)
-	m_messageAddImportant("You rolled a "..special.." on a "..dieSides, 100)
 end
 
 -- onUnload is an hardcoded function that is called when the level is closed/restarted

@@ -7,16 +7,16 @@ u_execScript("evolutionpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then pAltBarrage(bRandom(2, 3), 2) 
+		if mKey == 0 then pAltBarrage(math.random(2, 3), 2) 
 	elseif mKey == 1 then pBarrageSpiral(3, 0.6, 1)
 	elseif mKey == 2 then pInverseBarrage(0)
-	elseif mKey == 3 then pTunnel(bRandom(1, 3))
+	elseif mKey == 3 then pTunnel(math.random(1, 3))
 	elseif mKey == 4 then pMirrorWallStrip(1, 0)
-	elseif mKey == 5 then pWallExVortex(0, bRandom(1, 2), 1)
-	elseif mKey == 6 then pDMBarrageSpiral(bRandom(4, 7), 0.4, 1)
-	elseif mKey == 7 then pRandomBarrage(bRandom(2, 5), 2.25)
-	elseif mKey == 8 then pMirrorSpiralDouble(bRandom(4, 6), 0)
-	elseif mKey == 9 then pMirrorSpiral(bRandom(2, 4), 0)
+	elseif mKey == 5 then pWallExVortex(0, math.random(1, 2), 1)
+	elseif mKey == 6 then pDMBarrageSpiral(math.random(4, 7), 0.4, 1)
+	elseif mKey == 7 then pRandomBarrage(math.random(2, 5), 2.25)
+	elseif mKey == 8 then pMirrorSpiralDouble(math.random(4, 6), 0)
+	elseif mKey == 9 then pMirrorSpiral(math.random(2, 4), 0)
 	end
 end
 
@@ -28,18 +28,18 @@ index = 0
 
 -- onInit is an hardcoded function that is called when the level is first loaded
 function onInit()
-	l_setSpeedMult(4.25)
-	l_setSpeedInc(0.0)
+	l_setSpeedMult(4)
+	l_setSpeedInc(0.1)
 	l_setRotationSpeed(0.25)
 	l_setRotationSpeedMax(0.5)
 	l_setRotationSpeedInc(0.05)
 	l_setDelayMult(1.25)
-	l_setDelayInc(0.0)
+	l_setDelayInc(-0.01)
 	l_setFastSpin(0.0)
 	l_setSides(6)
 	l_setSidesMin(6)
 	l_setSidesMax(6)
-	l_setIncTime(10)
+	l_setIncTime(15)
 
 	l_setPulseMin(60)
 	l_setPulseMax(87)
@@ -71,6 +71,7 @@ end
 
 -- onIncrement is an hardcoded function that is called when the level difficulty is incremented
 function onIncrement()
+	
 end
 
 -- onUnload is an hardcoded function that is called when the level is closed/restarted

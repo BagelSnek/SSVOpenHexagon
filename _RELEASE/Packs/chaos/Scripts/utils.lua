@@ -1,14 +1,12 @@
 -- initialize random seed
 math.randomseed(os.time())
-
--- bRandom: gives a better random nuber that doesn't rely on the second value in os.time()
-function bRandom(minVal, maxVal)
-	math.randomseed(math.random() * 10 ^ 7)
-	return math.random(minVal, maxVal)
-end
+math.random()
+math.random()
+math.random()
 
 -- shuffle: shuffles an array
 function shuffle(t)
+	math.randomseed(os.time())
 	local iterations = #t
 	local j
 	for i = iterations, 2, -1 do
@@ -42,7 +40,7 @@ function valInArray(val, array)
     return inArray
 end
 
--- randNRArray: returns an array of a given length with numbers between minVal and maxVal with no repeating numbers
+-- randNRArray: returns an array of a given length with all numbers between minVal and maxVal with no repeating numbers
 function randNRArray(length, minVal, maxVal)
 	sides = {n = length}
 	for i = 1, length do
