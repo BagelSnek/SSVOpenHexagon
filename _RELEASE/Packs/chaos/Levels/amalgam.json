@@ -6,7 +6,7 @@
 	"menuPriority": 8,
 	"selectable": true,
 	"styleId": "amalgam",
-	"musicId": "steampunkWarlord",
+	"musicId": "mantisShrimpShowdown",
 	"luaFile": "Scripts/Levels/amalgam.lua",
 	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
 }

@@ -1,0 +1,24 @@
+{
+	// Music data id
+	"id": "badland",
+
+	// Music file
+	"file_name": "badland.ogg",
+
+	// Music information
+	"name": "badland",
+	"album": "",
+	"author": "Boom Kitty",
+	
+	// Segments
+	"segments":
+	[
+		{ "time": 44 },
+		{ "time": 74 },
+		{ "time": 89 },
+		{ "time": 119 },
+		{ "time": 195 },
+		{ "time": 210 },
+		{ "time": 256 }
+	]
+}

@@ -50,7 +50,7 @@ end
 
 -- onStep is an hardcoded function that is called when the level timeline is empty
 -- onStep should contain your pattern spawning logic
-accRate = 0.01
+accRate = 0.0025
 function onStep()
 	addPattern(keys[index])
 	index = index + 1

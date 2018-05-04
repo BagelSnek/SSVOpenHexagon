@@ -8,7 +8,7 @@ u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then 
+		if mKey == 0 then ripple(bRandom(0, 4), 2, 4)
 	end
 end
 

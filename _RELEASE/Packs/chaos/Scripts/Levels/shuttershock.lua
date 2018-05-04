@@ -8,10 +8,10 @@ u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then rollingShutters(getRandomSide(), 2, 0, 0, 0, false, math.random(1, 2), 20)
+		if mKey == 0 then rollingShutters(getRandomSide(), 2, 0, 0, 0, false, bRandom(1, 2), 20)
 		elseif mKey == 1 then alternatingCurveCage(getRandomSide(), 2, 0, 0, 0, false)
 		-- elseif mKey == 2 then stackedWall(getRandomSide(), 1, 0, 0, 0, false, 10)
-		elseif mKey == 2 then fracAccWallRing(math.random(2, 3), (index / 2.0) * cFlip, 0, 0, 0, false)
+		elseif mKey == 2 then fracAccWallRing(bRandom(2, 3), (index / 2.0) * cFlip, 0, 0, 0, false)
 	end
 end
 
