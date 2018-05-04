@@ -1,0 +1,12 @@
+{
+	"id": "trancendance",
+	"name": "trancendance",
+	"description": "dance for the restless spirits",
+	"author": "sir memesalot",	
+	"menuPriority": 9,
+	"selectable": true,
+	"styleId": "trancendance",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/trancendance.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

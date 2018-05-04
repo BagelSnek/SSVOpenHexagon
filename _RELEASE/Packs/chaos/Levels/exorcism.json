@@ -1,0 +1,12 @@
+{
+	"id": "exorcism",
+	"name": "exorcism",
+	"description": "what have you done to earn this?",
+	"author": "sir memesalot",	
+	"menuPriority": 6,
+	"selectable": true,
+	"styleId": "exorcism",
+	"musicId": "badland",
+	"luaFile": "Scripts/Levels/exorcism.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

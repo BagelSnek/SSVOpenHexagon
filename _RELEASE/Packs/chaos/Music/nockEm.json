@@ -1,0 +1,20 @@
+{
+	// Music data id
+	"id": "nockEm",
+
+	// Music file
+	"file_name": "nockEm.ogg",
+
+	// Music information
+	"name": "Nock Em",
+	"album": " ",
+	"author": "Bossfight",
+	
+	// Segments
+	"segments":
+	[
+		{ "time": 63 },
+		{ "time": 109 },
+		{ "time": 146 }
+	]
+}

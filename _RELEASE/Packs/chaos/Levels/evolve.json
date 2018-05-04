@@ -1,0 +1,12 @@
+{
+	"id": "evolve",
+	"name": "evolve",
+	"description": "not to be confused with evotutorial",
+	"author": "sir memesalot",	
+	"menuPriority": 7,
+	"selectable": true,
+	"styleId": "evolve",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/evolve.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

@@ -5,14 +5,14 @@ u_execScript("alternativepatterns.lua")
 u_execScript("nextpatterns.lua")
 
 hueModifier = 0.2
-sync = false
+sync = 0
 syncRndMin = 0
 syncRndMax = 0
 
 curveMult = 1
 
 function syncCurveWithRotationSpeed(mRndMin, mRndMax)
-	sync = true
+	sync = 1
 	syncRndMin = mRndMin
 	syncRndMax = mRndMax
 end
@@ -22,7 +22,7 @@ function setCurveMult(mMult)
 end
 
 function wallHMCurveAcc(mSide, mCurve, mCurveAcc, mCurveMin, mCurveMax, mCurvePingPong)
-	if sync == true then
+	if sync == 1 then
 		mCurve = l_getRotationSpeed() * 10.0
 		mCurve = mCurve + (math.random(syncRndMin, syncRndMax) / 100.0)
 	end
