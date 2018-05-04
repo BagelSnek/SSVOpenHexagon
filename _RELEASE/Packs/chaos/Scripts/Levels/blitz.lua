@@ -4,54 +4,53 @@ u_execScript("common.lua")
 u_execScript("commonpatterns.lua")
 u_execScript("nextpatterns.lua")
 u_execScript("evolutionpatterns.lua")
+u_execScript("remasteredpatterns.lua")
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then pAltBarrage(bRandom(2, 3), 2) 
-	elseif mKey == 1 then pBarrageSpiral(3, 0.6, 1)
-	elseif mKey == 2 then pInverseBarrage(0)
-	elseif mKey == 3 then pTunnel(bRandom(1, 3))
-	elseif mKey == 4 then pMirrorWallStrip(1, 0)
-	elseif mKey == 5 then pWallExVortex(0, bRandom(1, 2), 1)
-	elseif mKey == 6 then pDMBarrageSpiral(bRandom(4, 7), 0.4, 1)
-	elseif mKey == 7 then pRandomBarrage(bRandom(2, 5), 2.25)
-	elseif mKey == 8 then pMirrorSpiralDouble(bRandom(4, 6), 0)
-	elseif mKey == 9 then pMirrorSpiral(bRandom(2, 4), 0)
+		if mKey == 0 then blitzBarrage(bRandom(10,20), 1, 0.4, 0.35)
+	elseif mKey == 1 then blitzRing(bRandom(2, 3), 1, 0.4, 0.35)
 	end
 end
 
 -- shuffle the keys, and then call them to add all the patterns
 -- shuffling is better than randomizing - it guarantees all the patterns will be called
-keys = { 0, 0, 1, 1, 2, 2, 3, 4, 4, 5, 6, 7, 7, 7, 8, 9, 9 }
+keys = { 0, 0, 1 }
 keys = shuffle(keys)
 index = 0
+special = bRandom(0, 1)
 
 -- onInit is an hardcoded function that is called when the level is first loaded
 function onInit()
-	l_setSpeedMult(4.25)
-	l_setSpeedInc(0.0)
+	l_setSpeedMult(5.0)
+	l_setSpeedInc(0.1)
 	l_setRotationSpeed(0.25)
 	l_setRotationSpeedMax(0.5)
 	l_setRotationSpeedInc(0.05)
-	l_setDelayMult(1.25)
-	l_setDelayInc(0.0)
+	l_setDelayMult(1.00)
+	l_setDelayInc(-0.075)
 	l_setFastSpin(0.0)
-	l_setSides(6)
+	l_setSides(7)
 	l_setSidesMin(6)
 	l_setSidesMax(6)
 	l_setIncTime(10)
 
 	l_setPulseMin(60)
-	l_setPulseMax(87)
-	l_setPulseSpeed(0)
+	l_setPulseMax(80)
+	l_setPulseSpeed(0.75)
 	l_setPulseSpeedR(1)
-	l_setPulseDelayMax(12.9)
+	l_setPulseDelayMax(50)
 
-	l_setBeatPulseMax(20)
-	l_setBeatPulseDelayMax(20)
+	l_setBeatPulseMax(45)
+	l_setBeatPulseDelayMax(25)
 
-	enableSwapIfDMGreaterThan(1)
+	l_setRadiusMin(35)
+	l_enableRndSideChanges(false)
+
+	enableSwapIfDMGreaterThan(1.0)
 end
+
+bFlip = 1
 
 -- onLoad is an hardcoded function that is called when the level is started/restarted
 function onLoad()
@@ -60,23 +59,40 @@ end
 -- onStep is an hardcoded function that is called when the level timeline is empty
 -- onStep should contain your pattern spawning logic
 function onStep()
-	addPattern(keys[index])
-	index = index + 1
+	if special == 0 then
+		sync = bRandom(0, 1)
+		hueModifier = sync
+		hmcSimpleBarrage(sync * bFlip)
+		bFlip = -bFlip
+		t_wait(getPerfectDelay(getPerfectThickness(THICKNESS)) * 5)
+	else
+		addPattern(keys[index])
+		if index == #keys then
+			keys = shuffle(keys)
+			index = 0
+		end
 
-	if index - 1 == #keys then
-		index = 1
-		keys = shuffle(keys)
+		index = index + 1
 	end
 end
 
 -- onIncrement is an hardcoded function that is called when the level difficulty is incremented
 function onIncrement()
+	special = bRandom(0, 1)
 end
 
 -- onUnload is an hardcoded function that is called when the level is closed/restarted
 function onUnload()
 end
 
+-- continuous direction change (even if not on level increment)
+dirChangeTime = bRandom(4, 10) * 25
+
 -- onUpdate is an hardcoded function that is called every frame
 function onUpdate(mFrameTime)
+	dirChangeTime = dirChangeTime - mFrameTime
+	if dirChangeTime <= 0 then
+		l_setRotationSpeed(-l_getRotationSpeed())
+		dirChangeTime = bRandom(4, 10) * 25
+	end
 end

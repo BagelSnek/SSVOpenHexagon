@@ -1,0 +1,12 @@
+{
+	"id": "acceleration",
+	"name": "acceleration",
+	"description": "wheeeeee!",
+	"author": "sir memesalot",	
+	"menuPriority": 5,
+	"selectable": true,
+	"styleId": "acceleration",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/acceleration.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

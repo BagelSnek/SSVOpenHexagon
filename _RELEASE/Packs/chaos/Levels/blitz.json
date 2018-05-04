@@ -1,0 +1,12 @@
+{
+	"id": "blitz",
+	"name": "blitz",
+	"description": "don't think, just move",
+	"author": "sir memesalot",	
+	"menuPriority": 10,
+	"selectable": true,
+	"styleId": "blitz",
+	"musicId": "nockEm",
+	"luaFile": "Scripts/Levels/blitz.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}
