@@ -1,0 +1,12 @@
+{
+	"id": "lasers",
+	"name": "Prismancy",
+	"description": "Watch your eyes",
+	"author": "Machoo",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "lasers",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/lasers.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

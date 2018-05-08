@@ -142,11 +142,11 @@ function pACBarrageMulti()
 	t_wait(delay * 8)
 end
 
-function pACBarrageMultiAltDir()
+function pACBarrageMultiAltDir(mSide)
 	currentSides = l_getSides()
 	delay = getPerfectDelayDM(THICKNESS) * 4
 	mdiff = 1 + math.abs(1 - u_getDifficultyMult())
-	startSide = math.random(0, 10)
+	startSide = mSide
 	loopDir = getRandomDir()
 	for i = 0, currentSides + getHalfSides() do
 		currentSide = startSide + i * loopDir

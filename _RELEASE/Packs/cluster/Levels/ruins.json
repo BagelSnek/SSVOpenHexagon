@@ -1,0 +1,12 @@
+{
+	"id": "ruins",
+	"name": "Ancient Mechanisms",
+	"description": "Old wisdom can baffle the modern philosopher",
+	"author": "Machoo",	
+	"menuPriority": 1,
+	"selectable": true,
+	"styleId": "ruins",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/ruins.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

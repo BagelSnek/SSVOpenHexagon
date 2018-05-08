@@ -9,36 +9,37 @@ math.random()
 
 -- this function adds a pattern to the timeline based on a key
 function addPattern(mKey)
-		if mKey == 0 then lotsOWalls(18)
-	elseif mKey == 1 then spoopySpin()
-	elseif mKey == 2 then cWallEx(getRandomSide(), getHalfSides())
-	elseif mKey == 3 then spoopyFlower(getRandomSide())
-	elseif mKey == 4 then spoopySlowing()
-	elseif mKey == 5 then spoopyWobble(50)
+		if mKey == 0 then rWall(getRandomSide())
+	elseif mKey == 1 then spinning()
+	elseif mKey == 2 then wawl(getRandomSide())
+	elseif mKey == 3 then spinTrap(getRandomSide())
+	elseif mKey == 4 then pAltBarrage(math.random(2, 4), 2)
+	elseif mKey == 5 then confuse(getRandomSide())
+	elseif mKey == 6 then confuseS(getRandomSide())
 	end
 end
 
 -- shuffle the keys, and then call them to add all the patterns
 -- shuffling is better than randomizing - it guarantees all the patterns will be called
-keys = {1}
+keys = {0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6}  --0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6
 keys = shuffle(keys)
 index = 0
 swoosh = 0
 
 -- onInit is an hardcoded function that is called when the level is first loaded
 function onInit()
-	l_setSpeedMult(2.3)
-	l_setSpeedInc(0.05)
-	l_setRotationSpeed(0.020)
-	l_setRotationSpeedMax(0.50)
-	l_setRotationSpeedInc(0.0500)
+	l_setSpeedMult(2.0)
+	l_setSpeedInc(0.1)
+	l_setRotationSpeed(0.0)
+	l_setRotationSpeedMax(0.0)
+	l_setRotationSpeedInc(0.0)
 	l_setDelayMult(1.0)
 	l_setDelayInc(-0.00)
-	l_setFastSpin(20.0)
-	l_setSides(36)
-	l_setSidesMin(36)
-	l_setSidesMax(36)
-	l_setIncTime(10)
+	l_setFastSpin(50.0)
+	l_setSides(12)
+	l_setSidesMin(12)
+	l_setSidesMax(12)
+	l_setIncTime(30)
 
 	l_setPulseMin(60)
 	l_setPulseMax(87)
@@ -49,7 +50,7 @@ function onInit()
 	l_setBeatPulseMax(17)
 	l_setBeatPulseDelayMax(24.8)
 
-	l_setSwapEnabled(true)
+	l_setSwapEnabled(false)
 	
 	l_setRadiusMin(40)
 end
@@ -72,6 +73,7 @@ end
 
 -- onIncrement is an hardcoded function that is called when the level difficulty is incremented
 function onIncrement()
+	wiggly()
 end
 
 -- onUnload is an hardcoded function that is called when the level is closed/restarted

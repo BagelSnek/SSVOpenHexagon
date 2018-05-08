@@ -1,0 +1,12 @@
+{
+	"id": "Testing",
+	"name": "Limbo",
+	"description": "May be Kansas, but I'm not ruling out Narnia either",
+	"author": "Machoo",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "Testing",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/Testing.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

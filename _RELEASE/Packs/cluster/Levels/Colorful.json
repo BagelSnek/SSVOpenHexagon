@@ -1,0 +1,12 @@
+{
+	"id": "Colorful",
+	"name": "Pretty",
+	"description": "epilepsy is a placebo",
+	"author": "Machoo",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "Colorful",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/Colorful.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

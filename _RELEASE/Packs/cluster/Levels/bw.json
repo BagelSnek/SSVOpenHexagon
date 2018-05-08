@@ -1,0 +1,12 @@
+{
+	"id": "bw",
+	"name": "Back to the '80s // So they just legalized pot",
+	"description": "It's more dangerous than you think",
+	"author": "Machoo",	
+	"menuPriority": 1,
+	"selectable": true,
+	"styleId": "bw",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/bw.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

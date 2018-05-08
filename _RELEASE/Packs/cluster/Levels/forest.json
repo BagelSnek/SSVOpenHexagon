@@ -1,8 +1,8 @@
 {
 	"id": "forest",
-	"name": "forest",
-	"description": "",
-	"author": "",	
+	"name": "Sufficient Haunting",
+	"description": "Not too scary...   but just enough",
+	"author": "Machoo",	
 	"menuPriority": 0,
 	"selectable": true,
 	"styleId": "forest",

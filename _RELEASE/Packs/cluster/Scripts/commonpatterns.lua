@@ -194,3 +194,89 @@ function pTunnel(mTimes)
 	
 	THICKNESS = oldThickness
 end
+
+function wallRound(mSide)
+	dasSide = 0
+	interval = 1
+	waitTime = 7
+	for i = 0, 30 do
+		rWall(dasSide, 20)
+		dasSide = dasSide + interval
+		t_wait(waitTime)
+		waitTime = waitTime - 0.1
+		if waitTime < 6.2 then interval = -1 end
+		if waitTime < 5 then interval = 1 end
+	end
+end
+
+function lazar(mSide)
+	side = mSide
+	w_wall(mSide, 7000)
+	w_wall(mSide + 3, 7000)
+	w_wall(mSide + 6, 7000)
+	for i = 0, 3 do
+		cWall(mSide + 1)
+		cWall(mSide + 4)
+		cWall(mSide + 7)
+		t_wait(20)
+		cWall(mSide + 2)
+		cWall(mSide + 5)
+		cWall(mSide + 8)
+		t_wait(20)
+	end
+	for i = 0, 3 do
+		cWall(mSide + 2)
+		cWall(mSide + 5)
+		cWall(mSide + 8)
+		t_wait(20)
+		cWall(mSide + 1)
+		cWall(mSide + 4)
+		cWall(mSide + 7)
+		t_wait(20)
+	end
+end
+
+function warning(mSide)
+	w_wall(mSide, 500)
+	t_wait(80)
+	wallSAcc(mSide-3, 1, 1, 1, 10)
+	wallSAcc(mSide-2, 1, 1, 1, 10)
+	wallSAcc(mSide-1, 1, 1, 1, 10)
+	wallSAcc(mSide+1, 1, 1, 1, 10)
+	wallSAcc(mSide+2, 1, 1, 1, 10)
+	wallSAcc(mSide+3, 1, 1, 1, 10)
+	t_wait(60)
+end
+
+function wiggly(mSides)
+	side = math.random(0, mSides)
+	moving = math.random(0, 4)
+	for i = 0, math.random(30, 50) do
+		if moving == 0 then moving = -1
+		else moving = 1 end
+		wallSAcc(side, 1, 1, 1, 1.125)
+		wallSAcc(side + 6, 1, 1, 1, 1.125)
+		wallSAcc(side + 12, 1, 1, 1, 1.125)
+		wallSAcc(side + 18, 1, 1, 1, 1.125)
+		side = side + moving
+		moving = math.random(0, 4)
+		t_wait(5)
+	end
+end
+
+function stalling()
+	side = 0
+	waviness = 0.1
+	for i = 0, math.random(40, 50) do
+		wavyplier = waviness
+		for i = 0, math.random(30, 50) do
+			wallSAcc(side, 1, 1, 1, wavyplier)
+			t_wait(0.5)
+			wallSAcc(side + 1, 1, 1, 1, wavyplier)
+			t_wait(0.5)
+			wavyplier = wavyplier + .1
+		end
+		side = side + 2
+		waviness = waviness + 0.0005
+	end
+end

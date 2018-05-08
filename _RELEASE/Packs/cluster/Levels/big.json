@@ -1,0 +1,12 @@
+{
+	"id": "big",
+	"name": "Bloaty",
+	"description": "Hmm",
+	"author": "Machoo",	
+	"menuPriority": 1,
+	"selectable": true,
+	"styleId": "big",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/big.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

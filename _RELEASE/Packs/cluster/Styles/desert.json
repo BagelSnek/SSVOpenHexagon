@@ -1,0 +1,33 @@
+{
+	// Style data id
+	"id": "desert",
+
+	// Hue options
+	"hue_min": 20,
+	"hue_max": 40,
+	"hue_ping_pong": true,
+	"hue_increment": 0.05,
+	
+	// Pulse options
+	"pulse_min": 0.0,
+	"pulse_max": 0.5,
+	"pulse_increment": 0.0005,
+
+	// 3D options
+	"3D_depth": 4, //Should be 9
+	"3D_skew": 0.05,
+	"3D_spacing": 30.0,
+	"3D_darken_multiplier": 1.0,
+	"3D_alpha_multiplier": 2.0,
+	"3D_alpha_falloff": 16.0,
+
+	// Main color
+	"main": { "main": true, "dynamic": true, "value": [255, 255, 0, 0], "pulse": [200, 170, 0, 0] },
+
+	// Background colors
+	"colors":
+	[
+		{ "dynamic": true, "dynamic_offset": false, "dynamic_darkness": 4.0, "value": [100,80, 0, 0], "pulse": [170, 160, 0, 0]},
+		{ "dynamic": true, "dynamic_offset": false, "dynamic_darkness": 4.0, "value": [160, 100, 0, 0], "pulse": [210, 150, 0, 0]}
+	]
+}

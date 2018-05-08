@@ -1,0 +1,12 @@
+{
+	"id": "BPOil",
+	"name": "All's well that ends well...",
+	"description": "BP's Oil Well : the game",
+	"author": "Machoo",	
+	"menuPriority": 0,
+	"selectable": true,
+	"styleId": "BPOil",
+	"musicId": "steampunkWarlord",
+	"luaFile": "Scripts/Levels/BPOil.lua",
+	"difficultyMults": [0.85, 1.25, 1.4, 1.8]
+}

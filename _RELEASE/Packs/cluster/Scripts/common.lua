@@ -1,5 +1,5 @@
 -- common variables
-THICKNESS = 40.0;
+THICKNESS = 60.0;
 
 function enableSwapIfDMGreaterThan(mDM)
 	if(u_getDifficultyMult() > mDM) then

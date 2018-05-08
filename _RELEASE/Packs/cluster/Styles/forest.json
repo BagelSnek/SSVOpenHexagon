@@ -4,30 +4,40 @@
 
 	// Hue options
 	"hue_min": 0,
-	"hue_max": 360,
+	"hue_max": 0,
 	"hue_ping_pong": false,
-	"hue_increment": 0.5,
+	"hue_increment": 0.0,
 	
 	// Pulse options
 	"pulse_min": 0.0,
-	"pulse_max": 1.5,
+	"pulse_max": 1.0,
 	"pulse_increment": 0.025,
 
 	// 3D options
-	"3D_depth": 3,
+	"3D_depth": 9, //Should be 9
 	"3D_skew": 0.25,
-	"3D_spacing": 15.0,
+	"3D_spacing": 10.0,
 	"3D_darken_multiplier": 1.0,
 	"3D_alpha_multiplier": 2.0,
 	"3D_alpha_falloff": 16.0,
 
 	// Main color
-	"main": { "main": true, "dynamic": true, "value": [0, 255, 0, 255], "pulse": [-80, 75, 65, 0] },
+	"main": { "main": true, "dynamic": true, "value": [10, 0, 90, 1], "pulse": [50, 0, 155, 1] },
 
 	// Background colors
 	"colors":
 	[
-		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 4.0, "value": [0, 0, 0, 0], "pulse": [0, 0, 0, 0]},
-		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [0, 0, 0, 0], "pulse": [0, 0, 0, 0]}
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 0, 100, 60], "pulse": [75, 0, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 0, 50, 0], "pulse": [50, 0, 100, 0]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 0, 100, 60], "pulse": [75, 0, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 0, 50, 0], "pulse": [50, 0, 100, 0]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 0, 100, 60], "pulse": [75, 0, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 50, 50, 0], "pulse": [50, 50, 100, 0]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 50, 100, 60], "pulse": [75, 50, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 0, 100, 60], "pulse": [75, 0, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 0, 50, 0], "pulse": [50, 0, 100, 0]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 0.0, "value": [50, 0, 100, 60], "pulse": [75, 0, 150, 40]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 0, 50, 0], "pulse": [50, 0, 100, 0]},
+		{ "dynamic": true, "dynamic_offset": true, "dynamic_darkness": 8.0, "value": [25, 100, 50, 0], "pulse": [50, 100, 100, 0]}
 	]
 }
