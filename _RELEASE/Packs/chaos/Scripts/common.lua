@@ -19,7 +19,7 @@ end
 function getHalfSides() return math.ceil(l_getSides() / 2) end
 
 -- getRandomSide: returns random mSide
-function getRandomSide() return math.random(0, l_getSides() - 1) end
+function getRandomSide() return bRandom(0, l_getSides() - 1) end
 
 -- getRandomDir: returns either 1 or -1
 function getRandomDir()

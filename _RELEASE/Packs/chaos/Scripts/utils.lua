@@ -1,8 +1,9 @@
 -- initialize random seed
 math.randomseed(os.time())
 
--- bRandom: gives a better random nuber that doesn't rely on the second value in os.time()
+-- bRandom: gives a better random number that doesn't rely on os.time()
 function bRandom(minVal, maxVal)
+	if minVal == maxVal then return minVal end
 	math.randomseed(math.random() * 10 ^ 7)
 	return math.random(minVal, maxVal)
 end
